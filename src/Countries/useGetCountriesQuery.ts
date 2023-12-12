@@ -1,22 +1,27 @@
-import { gql, useLazyQuery } from "@apollo/client";
+import { gql, useQuery } from "@apollo/client";
 
 const countriesQuery = gql`
   query CountriesQueryInCountries {
     countries {
       name
       code
+      emoji
     }
   }
 `;
 
 export const useGetCountriesQuery = () => {
-  const [getCountries, { data, loading: isLoading, error: hasError }] =
-    useLazyQuery(countriesQuery);
+  const {
+    data,
+    loading: isLoading,
+    error: hasError,
+  } = useQuery(countriesQuery);
 
   const countriesData: {
     name: string;
     code: string;
+    emoji: string;
   }[] = data?.countries ?? [];
 
-  return { getCountries, countriesData, hasError, isLoading };
+  return { countriesData, hasError, isLoading };
 };

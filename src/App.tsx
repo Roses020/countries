@@ -7,7 +7,6 @@ function App() {
   return (
     <div>
       <header className="App-header">COUNTRIES</header>
-      <div className="Components"></div>
       <BrowserRouter>
         <Routes>
           <Route element={<Countries />} path="/" />

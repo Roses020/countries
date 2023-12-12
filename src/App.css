@@ -1,0 +1,139 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+.Components {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.SearchInput {
+  margin-top: 10px;
+  border-radius: 2px;
+  align-items: center;
+  font-size: medium;
+  font-style: italic;
+  font-weight: bold;
+  justify-content: center;
+  display: flex;
+  height: 40px;
+  width: 500px;
+  flex-direction: column;
+  gap: 25px;
+  margin-left: 600px;
+  margin-right: 600px;
+}
+.Button {
+  color: black;
+  border-radius: 50px;
+  padding: 5px;
+  font-size: calc(10px + 1vmin);
+  height: 40px;
+  width: 500px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  margin-left: 100px;
+}
+
+.App-header {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(245, 238, 238);
+  /* border-radius: 30px; */
+  display: flex;
+  /* height: 100px; */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(50px + 3vmin);
+  color: rgb(8, 8, 8);
+}
+
+.countriesContainer {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.countryCard {
+  background-color: whitesmoke;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  height: 125px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+.countryDetailsCard {
+  background-color: whitesmoke;
+  justify-content: center;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 600px;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: column;
+  border: 5px solid #ccc;
+  padding: 40px;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+p {
+  margin: 5px 0;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  margin: 5px 0;
+}
+.countryCard:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999; /* Ensure it appears above other content */
+}
+
+.loading img {
+  width: 100px; /* Adjust the image size as needed */
+  height: 100px;
+}

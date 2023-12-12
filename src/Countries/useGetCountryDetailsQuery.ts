@@ -1,4 +1,5 @@
 import { gql, useQuery } from "@apollo/client";
+import { ReactNode } from "react";
 
 const CountryDetails = gql`
   query GetCountryDetails($Code: ID!) {
@@ -9,11 +10,15 @@ const CountryDetails = gql`
       name
       emoji
       currency
+      capital
       code
       languages {
         code
         name
       }
+      native
+      phone
+      awsRegion
     }
   }
 `;
@@ -28,6 +33,7 @@ export const useGetCountryDetailsQuery = (countryCode: string | undefined) => {
   });
 
   const countryDetailsData: {
+    code: ReactNode;
     continent: {
       name: string;
     };
@@ -37,10 +43,11 @@ export const useGetCountryDetailsQuery = (countryCode: string | undefined) => {
     currency: {
       code: string;
     };
-    languages: {
-      code: string;
-      name: string;
-    };
+    capital: string;
+    native: String;
+    phone: string;
+    awsRegion: string;
   } = data?.country ?? {};
+
   return { countryDetailsData, hasError, isLoading };
 };
