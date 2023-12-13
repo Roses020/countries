@@ -30,7 +30,7 @@ export const Countries = () => {
         className="SearchInput"
         name="search"
         label=""
-        placeholder="SEARCH COUNTRY NAME"
+        placeholder="SEARCH HERE FOR A COUNTRY!"
         onChange={handleSearch}
       />
       {filteredCountries && (

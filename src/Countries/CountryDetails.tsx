@@ -1,5 +1,6 @@
 import { useGetCountryDetailsQuery } from "./useGetCountryDetailsQuery";
 import { useParams } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const CountryDetails = () => {
   const { countryCode } = useParams();
@@ -12,8 +13,12 @@ export const CountryDetails = () => {
 
   return (
     <div className="countryDetailsCard">
+      <button className="backButton" onClick={() => window.history.back()}>
+        --- Go Back
+      </button>
+
       {countryDetailsData && (
-        <div>
+        <div className="detailsData">
           <h2>Name: {countryDetailsData.name}</h2>
           <h3>Continent: {countryDetailsData.continent.name}</h3>
           <h3>Emoji: {countryDetailsData.emoji}</h3>

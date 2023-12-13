@@ -17,21 +17,39 @@
   flex-direction: column;
   gap: 20px;
 }
+.detailsData {
+  text-decoration: solid;
+  margin-bottom: 20px;
+  font-size: x-large;
+}
+.backButton {
+  margin-right: auto;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  border-color: black;
+  align-items: center;
+  padding: 5px;
+  background-color: skyblue;
+  font-size: calc(15px + 1vmin);
+  height: 40px;
+  width: 200px;
+}
 .SearchInput {
-  margin-top: 10px;
-  border-radius: 2px;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 4px;
   align-items: center;
   font-size: medium;
   font-style: italic;
   font-weight: bold;
   justify-content: center;
   display: flex;
-  height: 40px;
-  width: 500px;
+  height: 30px;
+  width: 300px;
   flex-direction: column;
   gap: 25px;
-  margin-left: 600px;
-  margin-right: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .Button {
   color: black;
@@ -46,14 +64,12 @@
 }
 
 .App-header {
-  margin-left: auto;
-  margin-right: auto;
   background-color: rgb(245, 238, 238);
-  /* border-radius: 30px; */
   display: flex;
-  /* height: 100px; */
   flex-direction: column;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
   align-items: center;
+  width: auto;
   justify-content: center;
   font-size: calc(50px + 3vmin);
   color: rgb(8, 8, 8);
@@ -85,15 +101,15 @@
   background-color: whitesmoke;
   justify-content: center;
   margin-top: 20px;
-  border: 1px solid #ddd;
+  border: 0.5px solid #fbf9f9;
   padding: 10px;
-  border-radius: 3px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 600px;
+  border-radius: 1px;
+  box-shadow: 30px 20px 50px rgba(0, 0, 0, 0.1);
+  width: auto;
   display: flex;
   align-items: center;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 50px;
+  margin-right: 50px;
   flex-direction: column;
   border: 5px solid #ccc;
   padding: 40px;
