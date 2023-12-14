@@ -22,12 +22,15 @@ export const Countries = () => {
   }, [countriesData, isLoading]);
 
   if (isLoading) return <CountryCardLoading />;
-  if (hasError) return <div>Sorry There is an Error</div>;
+  if (hasError) return <div>Error</div>;
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     const searchValue = event.target.value;
+    const cleanedSearchValue = searchValue.replace(/[\s\t]+/g, " ");
     const filteredCountries = countriesData.filter((country) => {
-      return country.name.toLowerCase().includes(searchValue.toLowerCase());
+      return country.name
+        .toLowerCase()
+        .includes(cleanedSearchValue.toLowerCase());
     });
     setFilteredCountries(filteredCountries);
   };
