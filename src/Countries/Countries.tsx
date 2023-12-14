@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useGetCountriesQuery } from "../Countries/useGetCountriesQuery";
 import { useNavigate } from "react-router-dom";
 import Input from "../Input";
+import CountryCardLoading from "../CountryCardLoading";
 
 export const Countries = () => {
   const navigate = useNavigate();
@@ -9,13 +10,20 @@ export const Countries = () => {
   const [filteredCountries, setFilteredCountries] = useState(countriesData);
 
   useEffect(() => {
-    setFilteredCountries(countriesData);
-  }, [countriesData]);
+    const fetchData = async () => {
+      if (isLoading) {
+        return;
+      }
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      setFilteredCountries(countriesData);
+    };
+    fetchData();
+    return () => {};
+  }, [countriesData, isLoading]);
 
-  if (isLoading) return <div>Loading...</div>;
-  if (hasError) return <div>Error</div>;
+  if (isLoading) return <CountryCardLoading />;
+  if (hasError) return <div>Sorry There is an Error</div>;
 
-  // // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     const searchValue = event.target.value;
     const filteredCountries = countriesData.filter((country) => {

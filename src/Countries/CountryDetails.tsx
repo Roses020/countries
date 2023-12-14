@@ -1,20 +1,19 @@
 import { useGetCountryDetailsQuery } from "./useGetCountryDetailsQuery";
 import { useParams } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import CountryCardLoading from "../CountryCardLoading";
 
 export const CountryDetails = () => {
   const { countryCode } = useParams();
   const { countryDetailsData, hasError, isLoading } =
     useGetCountryDetailsQuery(countryCode);
 
-  console.log(countryDetailsData);
-  if (isLoading) return <h1>Loading...</h1>;
-  if (hasError) return <div>Error loading country details</div>;
+  if (isLoading) return <CountryCardLoading />;
+  if (hasError) return <div>Error</div>;
 
   return (
     <div className="countryDetailsCard">
       <button className="backButton" onClick={() => window.history.back()}>
-        --- Go Back
+        Go Back
       </button>
 
       {countryDetailsData && (
