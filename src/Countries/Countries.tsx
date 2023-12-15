@@ -25,12 +25,12 @@ export const Countries = () => {
   if (hasError) return <div>Error</div>;
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const searchValue = event.target.value;
-    const cleanedSearchValue = searchValue.replace(/[\s\t]+/g, " ");
+    const cleanedSearchValue = event.target.value
+      .toLowerCase()
+      .trim()
+      .replace(/[\s\t]+/g, " ");
     const filteredCountries = countriesData.filter((country) => {
-      return country.name
-        .toLowerCase()
-        .includes(cleanedSearchValue.toLowerCase());
+      return country.name.toLowerCase().includes(cleanedSearchValue);
     });
     setFilteredCountries(filteredCountries);
   };
